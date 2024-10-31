@@ -16,6 +16,8 @@
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <!--
     
 Liv Gaz
@@ -89,7 +91,12 @@ Liv Gaz
                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
-                    
+                    <p>
+                    <div class="cart-icon" onclick="openCart()">
+                        <span>🛒</span>
+                        <span class="cart-count">0</span>
+                    </div>
+                </p>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
@@ -132,12 +139,12 @@ Liv Gaz
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/photo48.gif" alt="">
+                            <img class="img-fluid" src="./assets/img/giphy.gif" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
-                                <h1 class="h1 text-success"><b>liv gaz</b></h1>
-                                <h3 class="h2">liv gaz le numero 1 dans la vente et la livraison du gaz domestique</h3>
+                                <h1 class="h1 text-success"><b>MICRO DRACOS</b></h1>
+                                <h3 class="h2">Livré avec une armure 50Rd</h3>
                             </div>
                         </div>
                     </div>
@@ -147,10 +154,12 @@ Liv Gaz
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/photo46.gif" alt="">
+                            <img class="img-fluid" src="./assets/img/ui.jpg" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
+                                <h1 class="h1 text-success"><b>Pistolet Umarex TP50 Gen2 (HDP50) T4E CO2 - .50 (13 joules)</b></h1>
+                                <h3 class="h2">Le pistolet de défense UMAREX HDP50 attendait son successeur, le voici, c’est le TP50 de deuxième génération, plus puissant avec 13 joules, une crosse à l’ergonomie améliorée, une visée à fibre optique et un système Quick Piercing revisité, pour un niveau de performance et un confort optimisé.</h3>
                                 <p>
                             </div>
                         </div>
@@ -161,10 +170,12 @@ Liv Gaz
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/photo41.gif" alt="">
+                            <img class="img-fluid" src="./assets/img/giphy (1).gif" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
+                                <h1 class="h1 text-success"><b>Pack Fusil de défense Umarex T4E HDB 68 (16 Joules)</b></h1>
+                                <h3 class="h2">Dernier-né de la gamme UMAREX T4E d’armes de défense à balles caoutchouc, le HDB (Home Defense Blaster) est à réserver à la protection à domicile ou aux loisirs en terrain privé. Ses balles de calibre .68 propulsées à une puissance de 16 joules sont aptes à stopper n’importe quel agresseur.</h3>
                             </div>
                         </div>
                     </div>
@@ -191,20 +202,28 @@ Liv Gaz
                 </p>
             </div>
         </div>
+        <style>
+            #subcategories .inline_list li img {
+    height: 200px;
+    width: 272px;
+    padding-top: 0;
+    border-radius: 4px;
+}
+        </style>
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/oilibya-71-0.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="#"><img src="./assets/img/ni2.jpg" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">Gaz</h5>
                 <p class="text-center"><a class="btn btn-success">voir</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/tuyau-caoutchouc-6x12-longueur-68-0.jpg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">tuyau a gaz</h2>
+                <a href="#"><img src="./assets/img/ni4.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Bullet proof vest</h2>
                 <p class="text-center"><a class="btn btn-success"a href="voir.html#voir">voir</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/tefal-unlimited-poele-a-frire-32cm-88-0.jpg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">poeles</h2>
+                <a href="#"><img src="./assets/img/balles-22lr.jpg"class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">balles-22lr</h2>
                 <p class="text-center"><a class="btn btn-success"a href="explorer.html">explorer</a></p>
             </div>
         </div>
@@ -256,7 +275,7 @@ Liv Gaz
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="shop-single.html">
-                            <img src="./assets/img/glocal-gaz-90-0.jpg" class="card-img-top" alt="...">
+                            <img src="./assets/img/ui.jpg" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             <ul class="list-unstyled d-flex justify-content-between">

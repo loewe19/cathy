@@ -111,6 +111,12 @@ body, ul, li, p, a, label, input, div {
   opacity: 0.5;
   transition: .5s;
 }
+#subcategories .inline_list li img {
+  height: 97px;
+  width: 22px;
+  padding-top: 0;
+  border-radius: 4px;
+}
 .brand-img:hover {
   filter: grayscale(0%);
   opacity: 1;

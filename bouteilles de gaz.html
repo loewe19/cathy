@@ -89,6 +89,12 @@ https://templatemo.com/tm-559-zay-shop
                     <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
+                    <p>
+                        <div class="cart-icon" onclick="openCart()">
+                            <span>🛒</span>
+                            <span class="cart-count">0</span>
+                        </div>
+                    </p>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
@@ -253,7 +259,7 @@ https://templatemo.com/tm-559-zay-shop
                                         <li class="text-muted text-right">xaf7000</li>
                                     </ul>
                                     <a href="shop-single.html" class="h2 text-decoration-none text-dark">stargas</a>
-                                    <button class="btn btn-default section-btn"><a href="https://mesomb.hachther.com/pay/9jOORXKEmNYaee8IpIez" target="_blank" class="payment-link"button>acheter</a>
+                                    <button onclick="ajouterAuPanier('001', 1, 10.00)">Ajouter Article 001</button>
                                 </div>
                             </div>
                         </div>
@@ -611,8 +617,16 @@ https://templatemo.com/tm-559-zay-shop
                 </div>
             </div>
         </div>
-
     </footer>
+    <script src="panier.js"></script>
+    <script>
+        var monPanier = new Panier();
+
+        function ajouterAuPanier(code, qte, prix) {
+            monPanier.ajouterArticle(code, qte, prix);
+            alert("Total du panier : " + monPanier.getTotal() + " €");
+        }
+    </script>
     <!-- End Footer -->
 
     <!-- Start Script -->

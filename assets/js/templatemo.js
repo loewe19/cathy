@@ -7,51 +7,54 @@ https://templatemo.com/tm-559-zay-shop
 */
 
 'use strict';
-$(document).ready(function() {
+// Objet LignePanier
+function LignePanier(code, qte, prix) {
+  this.codeArticle = code;
+  this.qteArticle = qte;
+  this.prixArticle = prix;
+  
+  this.ajouterQte = function(qte) {
+      this.qteArticle += qte;
+  };
+  
+  this.getPrixLigne = function() {
+      return this.prixArticle * this.qteArticle;
+  };
+}
 
-    // Accordion
-    var all_panels = $('.templatemo-accordion > li > ul').hide();
+// Objet Panier
+function Panier() {
+  this.liste = [];
+  
+  this.ajouterArticle = function(code, qte, prix) {
+      var index = this.getArticle(code);
+      if (index === -1) {
+          this.liste.push(new LignePanier(code, qte, prix));
+      } else {
+          this.liste[index].ajouterQte(qte);
+      }
+  };
+  
+  this.getArticle = function(code) {
+      for (var i = 0; i < this.liste.length; i++) {
+          if (this.liste[i].codeArticle === code) {
+              return i;
+          }
+      }
+      return -1; // Article non trouvé
+  };
+  
+  this.getTotal = function() {
+      var total = 0;
+      for (var i = 0; i < this.liste.length; i++) {
+          total += this.liste[i].getPrixLigne();
+      }
+      return total;
+  };
+}
 
-    $('.templatemo-accordion > li > a').click(function() {
-        console.log('Hello world!');
-        var target =  $(this).next();
-        if(!target.hasClass('active')){
-            all_panels.removeClass('active').slideUp();
-            target.addClass('active').slideDown();
-        }
-      return false;
-    });
-    // End accordion
-
-    // Product detail
-    $('.product-links-wap a').click(function(){
-      var this_src = $(this).children('img').attr('src');
-      $('#product-detail').attr('src',this_src);
-      return false;
-    });
-    $('#btn-minus').click(function(){
-      var val = $("#var-value").html();
-      val = (val=='1')?val:val-1;
-      $("#var-value").html(val);
-      $("#product-quanity").val(val);
-      return false;
-    });
-    $('#btn-plus').click(function(){
-      var val = $("#var-value").html();
-      val++;
-      $("#var-value").html(val);
-      $("#product-quanity").val(val);
-      return false;
-    });
-    $('.btn-size').click(function(){
-      var this_val = $(this).html();
-      $("#product-size").val(this_val);
-      $(".btn-size").removeClass('btn-secondary');
-      $(".btn-size").addClass('btn-success');
-      $(this).removeClass('btn-success');
-      $(this).addClass('btn-secondary');
-      return false;
-    });
-    // End roduct detail
-
-});
+// Exemple d'utilisation
+var monPanier = new Panier();
+monPanier.ajouterArticle("001", 2, 10.00); // Ajoute 2 articles à 10.00 chacun
+monPanier.ajouterArticle("002", 1, 15.00); // Ajoute 1 article à 15.00
+console.log("Total du panier : " + monPanier.getTotal() + " €");
